@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(value="controllers")
+@ComponentScan(value="test")
 //@Configuration
 //@EnableAutoConfiguration
 public class SpringbootjpajspApplication {

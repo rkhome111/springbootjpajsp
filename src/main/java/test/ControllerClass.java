@@ -1,4 +1,4 @@
-package controllers;
+package test;
 
 import java.util.List;
 
@@ -45,10 +45,12 @@ public class ControllerClass {
 	
 	@RequestMapping(value="/getuserlist")
 //	@ResponseBody
-	public String getUsers(Model m)
+	public String getUsers(Model m,@RequestParam("name") String name)
 	{
 		m.addAttribute("command",new User());
-		m.addAttribute("users", (List)userRepo.findByName());
+		User u = new User();
+		u.setId(16);
+		m.addAttribute("users", (List)userRepo.findByUser(u));
 		return "User";
 	}
 	
@@ -74,6 +76,7 @@ public class ControllerClass {
 		
 		System.out.println("user find in post "+user);
 		userRepo.save(user);
+//		userRepo.
 		return "User saved sucessfully ";
 	}
 }
