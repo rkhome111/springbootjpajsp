@@ -12,18 +12,18 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	int id;
+	long id;
 	String name,job;
 	Long salary;
-	String test1="abc";
+	String test="abc";
 	
 	
 	
-	public String getTest() {
-		return test1;
+	public String getTest1() {
+		return test;
 	}
 	public void setTest(String test1) {
-		this.test1 = test1;
+		this.test = test1;
 	}
 	public String getJob() {
 		return job;
@@ -37,10 +37,10 @@ public class User {
 	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -49,11 +49,12 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
+		return "User [id=" + id + ", name=" + name + ", job=" + job + ", salary=" + salary + ", test=" + test + "]";
 	}
-
 	public User( String name, String job, Long salary) {
 		super();
 		this.name = name;
@@ -62,6 +63,7 @@ public class User {
 	}
 	public User() {
 		super();
+		id=0l;
 	}
 	
 
